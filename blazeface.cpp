@@ -262,7 +262,6 @@ static int detect_blazeface(const unsigned char *rgba_data, int width, int heigh
         detector.Init("blaceface.param", "blaceface.bin");
     }
     detector.Detect(rgba_data, width, height, boxes);
-
     return 0;
 }
 

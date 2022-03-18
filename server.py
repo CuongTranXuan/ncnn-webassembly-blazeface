@@ -1,5 +1,6 @@
 import http.server
 
+console.log("starting server")
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Cross-Origin-Opener-Policy", "same-origin")
