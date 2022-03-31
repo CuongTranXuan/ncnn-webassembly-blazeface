@@ -210,13 +210,13 @@
 
             var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             var data = imageData.data;
-
+            console.log("imgdata: " + typeof(data))
             HEAPU8.set(data, dst);
 
             var t0 = performance.now()
             _blazeface_ncnn(dst, canvas.width, canvas.height, resultbuffer);
             var t1 = performance.now()
-            console.log("blazeface_ncnn " + (t1 - t0) + " milliseconds.")
+            // console.log("blazeface_ncnn " + (t1 - t0) + " milliseconds.")
             var fps_counter = document.getElementById('fps')
             fps_counter.innerText = (1000 /(t1 - t0)).toFixed(2).toString();
 
@@ -246,7 +246,7 @@
                 if (label == -233)
                     continue;
 
-                console.log('qaq ' + label + ' = ' + prob);
+                // console.log('qaq ' + label + ' = ' + prob);
 
                 ctx.strokeStyle = colors[i % 19];
                 ctx.strokeRect(bbox_x, bbox_y, bbox_w, bbox_h);
